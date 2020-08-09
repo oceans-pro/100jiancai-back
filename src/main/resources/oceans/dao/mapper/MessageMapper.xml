@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oceans.dao.mapper.MessageMapper">
+	<select id="selectExistNumByIpAndByDateStr" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		FROM `表_顾客留言`
+		WHERE `ip` = #{ip}
+		  AND `datetime` LIKE CONCAT(#{dateStr}, '%');
+	</select>
+</mapper>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1 th:text="${title}" style="color:#043D87">这是标题，会被替代</h1>
+<p th:text="${content}">这是主体内容，会被替代。中国共产党党员是中国工人阶级的有共产主义觉悟的先锋战士。 中国共产党党员必须全心全意为人民服务，不惜牺牲个人的一切，为实现共产主义奋斗终身。
+    中国共产党党员永远是劳动人民的普通一员。除了法律和政策规定范围内的个人利益和工作职权以外，所有共产党员都不得谋求任何私利和特权。</p>
+<div style="font-size: small">
+    <div style="display: flex">
+        <div style="width: 80px;font-weight: bold;">ip地址:</div>
+        <div th:text="${ip}">192.168.0.1</div>
+    </div>
+    <div style="display: flex">
+        <div style="width: 80px;font-weight: bold;">城市：</div>
+        <div th:text="${city}">山东省招远市</div>
+    </div>
+    <div style="display: flex">
+        <div style="width: 80px;font-weight: bold;">时间：</div>
+        <div th:text="${datetime}">2020年7月18日</div>
+    </div>
+</div>
+</body>
+</html>

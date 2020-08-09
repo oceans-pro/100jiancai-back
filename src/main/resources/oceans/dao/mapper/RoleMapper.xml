@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oceans.dao.mapper.RoleMapper">
+	<select id="getEmailListByRoleId" resultType="string">
+		SELECT `email`
+		FROM `表_用户信息`
+				 INNER JOIN `auth_user_role` ON `表_用户信息`.`id` = `auth_user_role`.`user_id`
+				 INNER JOIN `auth_role` ON `auth_user_role`.`role_id` = `auth_role`.`id`
+		WHERE `auth_role`.`id` = #{roleId}
+	</select>
+</mapper>

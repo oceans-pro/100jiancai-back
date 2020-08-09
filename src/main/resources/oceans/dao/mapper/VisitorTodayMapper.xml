@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oceans.dao.mapper.VisitorTodayMapper">
+	<select id="selectCountByDateAndByTypeAndWithIpDistinct" resultType="int">
+		SELECT COUNT(DISTINCT `ip`)
+		FROM `表_访客记录`
+		WHERE `datetime` LIKE #{date}"%"
+		  AND `type` = #{type}
+	</select>
+
+	<select id="selectDistinctIPList" resultType="string">
+		SELECT DISTINCT `ip`
+		FROM `表_访客记录`
+		WHERE `datetime` LIKE #{date}"%"
+		  AND `type` = #{type}
+	</select>
+</mapper>

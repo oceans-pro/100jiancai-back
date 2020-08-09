@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oceans.dao.mapper.VisitorTodaySummaryMapper">
+	<select id="selectVisitorSumHistory" resultType="oceans.model.dto.VisitorSummaryHistoryDto">
+		SELECT SUM(`public_click`) AS `public_click_total`,
+			   SUM(`public_head`)  AS `public_head_total`,
+			   SUM(`admin_click`)  AS `admin_click_total`,
+			   SUM(`admin_head`)   AS `admin_head_total`
+		FROM `汇总表_访客数目`
+	</select>
+</mapper>
